@@ -1,0 +1,183 @@
+/* =========================================
+   PALETA DE COLORES Y VARIABLES
+   ========================================= */
+:root {
+    --primary-gold: #c5a059;       /* Dorado elegante */
+    --dark-deep: #0f0f0f;          /* Fondo más oscuro */
+    --dark-card: #1a1a1a;          /* Fondo de tarjetas */
+    --text-light: #f4f4f4;         /* Blanco roto para no cansar la vista */
+    --text-muted: #a0a0a0;         /* Gris para descripciones */
+    --transition: all 0.3s ease;
+}
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+   ========================================= */
+body {
+    background-color: var(--dark-deep);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   NAVBAR (Transparente a Oscura)
+   ========================================= */
+/* Asegura que el color de fondo sea el mismo al bajar */
+.navbar {
+    background-color: #0f0f0f !important; /* El negro profundo que elegimos */
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para el menú cuando se despliega en móviles */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #0f0f0f; /* Mismo color del navbar */
+        margin-top: 10px;
+        border-top: 1px solid #2a2a2a; /* Una línea sutil para separar */
+        border-radius: 0 0 10px 10px;
+    }
+    
+    .nav-link {
+        padding: 15px 0;
+        border-bottom: 1px solid #1a1a1a;
+    }
+}
+
+/* Color dorado para el nombre del restaurante */
+.text-gold {
+    color: #c5a059 !important;
+}
+
+/* Hover elegante para los links */
+.nav-link:hover {
+    color: #c5a059 !important;
+    background-color: rgba(197, 160, 89, 0.05);
+}
+/* =========================================
+   HERO SECTION (Impacto Visual)
+   ========================================= */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../img/fondo.jpg'); /* Asegúrate de tener esta imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero h1 {
+    color: var(--primary-gold);
+}
+
+/* =========================================
+   SECCIÓN MENÚ (Cards Elegantes)
+   ========================================= */
+#menu {
+    background-color: var(--dark-deep) !important;
+}
+
+.card {
+    background-color: var(--dark-card) !important;
+    border: 1px solid #2a2a2a !important;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-gold) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: var(--transition);
+}
+
+.card:hover .card-img-top {
+    filter: brightness(1);
+}
+
+.card-title {
+    color: var(--primary-gold);
+    margin-top: 10px;
+}
+
+.card-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.text-success {
+    color: var(--primary-gold) !important; /* El precio ahora es dorado */
+    font-weight: 600;
+}
+
+/* =========================================
+   FORMULARIO DE RESERVA (Modo Oscuro)
+   ========================================= */
+#reserva {
+    background-color: #0a0a0a; /* Un tono ligeramente distinto para separar */
+}
+
+.bg-dark.text-white.shadow-lg {
+    background-color: var(--dark-card) !important;
+    border: 1px solid #333;
+}
+
+.form-label {
+    color: var(--primary-gold);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.form-control {
+    background-color: #252525;
+    border: 1px solid #444;
+    color: white;
+    padding: 12px;
+}
+
+.form-control:focus {
+    background-color: #303030;
+    color: white;
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 0.25rem rgba(197, 160, 89, 0.2);
+}
+
+/* Botón Dorado */
+.btn-dark, .btn-warning {
+    background-color: var(--primary-gold) !important;
+    border-color: var(--primary-gold) !important;
+    color: #000 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.btn-dark:hover {
+    background-color: #e2b86a !important;
+    transform: scale(1.02);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    border-top: 1px solid #222;
+    background-color: var(--dark-deep) !important;
+}
+
+footer p {
+    color: var(--text-muted);
+}
